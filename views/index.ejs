@@ -8,6 +8,25 @@
   <link rel="stylesheet" href="/static/index.css">
 </head>
 <body>
-  <h1>Hello Express</h1>
+  <div class="wrapper">
+    <h1>익명 게시판</h1>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>제목</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach(item => { %>
+          <tr>
+            <td><%= item.num %></td>
+            <td><%= item.header %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
