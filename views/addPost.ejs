@@ -8,11 +8,19 @@
 </head>
 <body>
   <div class="wrapper">
-    <form action="/index" method="post">
-      <input type="text" name="header">
-      <input type="text" name="content">
+    <h1>익명게시판</h1>
+    <form action="/addPost" method="post">
+      <div class="title">
+        <label for="title">제목</label>
+        <input type="text" id="title" name="header">
+      </div>
+      <div>
+        <label for="content">내용</label>
+        <textarea rows="4" cols="50" id="content">내용을 입력해주세요</textarea>
+      </div>
+      <button type="submit">전송</button>
     </form>
-    <button>작성 완료</button>
+
   </div>
 </body>
 </html>
