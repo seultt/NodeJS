@@ -10,6 +10,18 @@ h1 {
   color: #444;
 }
 
+/*button { 
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  width: 50px; 
+  height: 50px; 
+  border: none; 
+  border-radius: 50%; 
+  background-color: black; 
+  color: #fff;
+}*/
+
 table {
   width: 100%;
   border-bottom: 1px solid #444;
@@ -21,3 +33,4 @@ th, td {
   padding: 10px;
 
 }
+
