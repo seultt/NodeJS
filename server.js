@@ -4,7 +4,7 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 
 const data = [
-  {num: '1', header: '첫 게시글'}
+  {num: 1, header: '첫 게시글'}
 ]
 
 const app = express()
@@ -33,8 +33,18 @@ app.post('/addPost', (req, res) => {
   res.redirect('/')
 })
 
+app.get('/content/:num', (req, res) => {
+  const num = parseInt(req.params.num)
+  const matched = [...data].find(item => item.num === num)
+  console.log(matched)
+  if (matched) {
+    res.render('content.ejs')
+  } else {
+    res.status(404)
+    res.send('404 Not Found')
+  }
+})
 
-
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log('listening...')
 })

@@ -22,7 +22,7 @@
         <% data.forEach(item => { %>
           <tr>
             <td><%= item.num %></td>
-            <td><%= item.header %></td>
+            <td><a href="/content/<%= item.num%>"><%= item.header %></a></td>
           </tr>
         <% }) %>
       </tbody>

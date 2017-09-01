@@ -1,4 +1,4 @@
-*{ margin: 0; padding: 0; box-sizing: border-box; }
+*{ margin: 0; padding: 0; box-sizing: border-box; text-decoration: none;}
 
 .wrapper {
   width: 100%;
@@ -10,7 +10,7 @@ h1 {
   color: #444;
 }
 
-/*button { 
+button { 
   position: absolute;
   right: 10px;
   top: 18px;
@@ -20,7 +20,10 @@ h1 {
   border-radius: 50%; 
   background-color: black; 
   color: #fff;
-}*/
+}
+button a:visited {
+  color: #fff;
+}
 
 table {
   width: 100%;
