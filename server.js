@@ -52,7 +52,15 @@ app.get('/content/:num', (req, res) => {
   }
 })
 
-
+// 댓글 내용 전송
+app.post('/content/:num', (req, res) => {
+  const num = parseInt(req.params.num)
+  const name = req.body.name
+  const coment = req.body.coment
+  subData.push({name, num, coment })
+  console.log(subData)
+  res.redirect('/content/'+num)
+})
 
 
 
