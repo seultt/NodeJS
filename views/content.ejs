@@ -9,5 +9,23 @@
 <body>
   <h1><%= matched.header%></h1>
   <p><%= matched.content%></p>
+
+  <form action="/content/<%= matched.num %>" method="post">
+    <h3>댓글쓰기</h3>
+    <div>
+      <p>
+        <input type="text" name="name">
+      </p>
+      <p>
+        <textarea name="coment" cols="30" rows="10"></textarea>
+      </p>
+      <button type="submit">댓글 입력</button>
+    </div>
+  </form>
+  <div>
+    <% subMatched.forEach(item => { %>
+      <p><span><%= item.name%><span>:<span><%= item.coment%></span></p>
+    <% }) %>
+  </div>
 </body>
 </html>
