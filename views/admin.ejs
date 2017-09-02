@@ -11,12 +11,12 @@
   <div class="wrapper">
     <h1>익명 게시판</h1>
     <button><a href="/addPost" method="get">새글</a></button>
-    <button><a href="/admin" method="get">로그인</a></button>
     <table>
       <thead>
         <tr>
           <th>번호</th>
           <th>제목</th>
+          <th>삭제</th>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +24,7 @@
           <tr>
             <td><%= item.num %></td>
             <td><a href="/content/<%= item.num%>"><%= item.header %></a></td>
+            <td><button>삭제</button></td>
           </tr>
         <% }) %>
       </tbody>
