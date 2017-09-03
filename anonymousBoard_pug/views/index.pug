@@ -5,7 +5,25 @@ html
     title 익명게시판
     link(type='text/css' rel='stylesheet' href='/static/index.css')
   body
-    h1 Node.js
-    -for(var i=0; i<5; i++)
-      li coding
-  div= time
+    header.clearfix
+      h1 Node.js
+      .right
+        span Login
+        span user
+    section
+      .top
+        h2 익명게시판
+        a(href="/addPost") +ADD POST
+      .board 리스트
+        each item in data
+          .list.clearfix
+            - if(item.num>10)
+                .list-num= '0'+item.num
+            - else
+                .list-num= item.num 
+            .list-content 
+              strong= item.title
+              span= item.content
+            .list-user
+              span= item.date
+              span= item.user+'님'
