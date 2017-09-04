@@ -31,6 +31,7 @@ a, a:hover, a:focus, a:active{ color: #fff;}
   position: fixed;
   top: 0;
   background-color: #dc1930;
+  z-index: 10000;
 }
 .header .right { 
   float: right; 
@@ -56,7 +57,7 @@ a, a:hover, a:focus, a:active{ color: #fff;}
   background-position: 6px 19px
 }
 .footer { 
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background-color: #160608;
 }
