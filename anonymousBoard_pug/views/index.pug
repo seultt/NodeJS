@@ -9,7 +9,8 @@ html
     .box
       header.header.clearfix
         .wrapper
-          h1.logo Node.js
+          h1.logo 
+            a(href="/") Node.js
           .right
             a.login(href="#") Login
             a.user(href="#") user
@@ -19,7 +20,7 @@ html
           a.board-add(href="/addPost") +ADD POST
         .board-list.clearfix
           each item in data
-            .list
+            a.list(href="/post")
               - if(item.num<10)
                   .list-num= '0' + item.num
               - else

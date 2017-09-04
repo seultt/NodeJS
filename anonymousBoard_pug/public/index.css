@@ -1,3 +1,12 @@
+/* section */
+.board {
+  position: relative;
+  top: 60px;
+  padding-top: 75px;
+  margin-bottom: 85px;
+  letter-spacing: -1px;
+}
+
 .board-top {height: 40px;}
 .board-top .board-title, .board-top .board-add {
   font-size: 18px;
@@ -6,7 +15,11 @@
 .board-title { float: left; font-weight: 800; }
 .board-add { display: inline-block; float: right; }
 
-.list { height: 110px; border-bottom: 1px solid #cbcbcb; }
+.list { 
+  display: block;
+  height: 110px; 
+  border-bottom: 1px solid #cbcbcb; }
+.list:hover{ border-bottom: 3px solid #dc1930; }
 .list div[class^="list-"] { float: left; }
 
 .list-num { 
@@ -34,13 +47,16 @@
   padding: 34px 25px;
 }
 .list-etc span {
+  line-height: 21px;
   display: block;
 }
 .list-etc .etc-date {
   font-size: 18px;
   font-weight: 700;
   color: #636363;
+  letter-spacing: 0;
 }
 .list-etc .etc-user {
+  font-size: 14px;
   color: #636363;
 }

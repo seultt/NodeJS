@@ -1,8 +1,8 @@
 /* css 초기화*/
 * { margin: 0; padding: 0; box-sizing: border-box}
-body { width: 100%; height: 100%; }
+html, body{ width: 100%; height: 100%;}
 a, ul, li { list-style: none; text-decoration: none; }
-a, a:hover, a:focus, a:active{ color: #000;}
+a, a:hover, a:focus, a:active{ color: #fff;}
 
 
 
@@ -68,13 +68,7 @@ a, a:hover, a:focus, a:active{ color: #000;}
   font-size: 14px;
 }
 
-/* section */
-.board {
-  position: relative;
-  top: 60px;
-  margin-top: 75px;
-  margin-bottom: 85px;
-}
+
 
 
 

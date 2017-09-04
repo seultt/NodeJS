@@ -12,7 +12,7 @@ function gotdate(today){
 // data
 const data = [
   {num: 1, title: '첫 게시글을 축하드립니다.', user: '헤헷', content:'Lorem Ipsum is simply dummy text of the printing and', date: gotdate(d)},
-  {num: 1, title: '첫 게시글을 축하드립니다.', user: '헤헷', content:'Lorem Ipsum is simply dummy text of the printing and', date: gotdate(d)}
+  {num: 2, title: '첫 게시글을 축하드립니다.', user: '헤헷', content:'Lorem Ipsum is simply dummy text of the printing and', date: gotdate(d)}
 ]
 
 app.locals.pretty = true; //pug : jade express code pretty
@@ -21,6 +21,9 @@ app.use('/static', express.static('public'))
 
 app.get('/', (req, res) => {
   res.render('index', {data})
+})
+app.get('/addPost', (req, res) => {
+  res.render('addPost')
 })
 
 app.listen(3000, () => {

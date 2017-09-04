@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title 익명게시판
+    link(type='text/css' rel='stylesheet' href='/static/layout.css')
+    link(type='text/css' rel='stylesheet' href='/static/addPost.css')
+  body
+    .box
+      header.header.clearfix
+        .wrapper
+          h1.logo 
+            a(href="/") Node.js
+          .right
+            a.login(href="#") Login
+            a.user(href="#") user
+      section.board.wrapper
+        form.input_box(action="/addPost" method="post")
+          label(for="title") 제목
+          input(type="text" name="title" id="title")
+          label(for="name") 작성자
+          input(type="text" name="name" id="name")
+          textarea(name="content")
+          .btn-box
+            button.btn.btn_finish(type="submit") 작성 완료
+            button.btn.btn_cancel
+              a(href="/") 작성 취소
+      footer.footer
+        .wrapper
+          h2.logo Node.js
+          p.left IE9 이상에 최적화된 사이트 입니다.        
