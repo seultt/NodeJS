@@ -36,6 +36,10 @@ each item in data
       .list-num= item.num
 ```
 
+___
+## 일정
+<2017.09.03> 프로젝트, 앱 셋팅 && pug 사용
+<2017.09.04> main CSS  적용 완료!
 
 
 

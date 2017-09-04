@@ -3,27 +3,35 @@ html
   head
     meta(charset='utf-8')
     title 익명게시판
+    link(type='text/css' rel='stylesheet' href='/static/layout.css')
     link(type='text/css' rel='stylesheet' href='/static/index.css')
   body
-    header.clearfix
-      h1 Node.js
-      .right
-        span Login
-        span user
-    section
-      .top
-        h2 익명게시판
-        a(href="/addPost") +ADD POST
-      .board 리스트
-        each item in data
-          .list.clearfix
-            - if(item.num>10)
-                .list-num= '0'+item.num
-            - else
-                .list-num= item.num 
-            .list-content 
-              strong= item.title
-              span= item.content
-            .list-user
-              span= item.date
-              span= item.user+'님'
+    .box
+      header.header.clearfix
+        .wrapper
+          h1.logo Node.js
+          .right
+            a.login(href="#") Login
+            a.user(href="#") user
+      section.wrapper.board 
+        .board-top.clearfix
+          h2.board-title 익명게시판
+          a.board-add(href="/addPost") +ADD POST
+        .board-list.clearfix
+          each item in data
+            .list
+              - if(item.num<10)
+                  .list-num= '0' + item.num
+              - else
+                  .list-num= item.num 
+              .list-content 
+                p.content-title= item.title
+                p.content-text= item.content
+              .list-etc
+                p.center
+                  span.etc-date= item.date
+                  span.etc-user= item.user+' 님'
+      footer.footer
+        .wrapper
+          h2.logo Node.js
+          p.left IE9 이상에 최적화된 사이트 입니다.        

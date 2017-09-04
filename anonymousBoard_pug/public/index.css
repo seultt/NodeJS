@@ -1,3 +1,46 @@
-h1 {
-  color: red;
+.board-top {height: 40px;}
+.board-top .board-title, .board-top .board-add {
+  font-size: 18px;
+  color: #dc1930;
+}
+.board-title { float: left; font-weight: 800; }
+.board-add { display: inline-block; float: right; }
+
+.list { height: 110px; border-bottom: 1px solid #cbcbcb; }
+.list div[class^="list-"] { float: left; }
+
+.list-num { 
+  width: 110px;
+  line-height: 110px; 
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  color: #c1c1c1;
+} 
+
+.list-content { width: 540px; padding-top: 27px; } 
+.list-content .content-title { 
+  font-size: 24px; 
+  font-weight: 800;
+  color: #636363;
+}
+.list-content .content-text {
+  color: #b6b6b6;
+} 
+
+.list-etc {
+  width: 150px;
+  text-align: right;
+  padding: 34px 25px;
+}
+.list-etc span {
+  display: block;
+}
+.list-etc .etc-date {
+  font-size: 18px;
+  font-weight: 700;
+  color: #636363;
+}
+.list-etc .etc-user {
+  color: #636363;
 }

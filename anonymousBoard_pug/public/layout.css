@@ -1,0 +1,81 @@
+/* css 초기화*/
+* { margin: 0; padding: 0; box-sizing: border-box}
+body { width: 100%; height: 100%; }
+a, ul, li { list-style: none; text-decoration: none; }
+a, a:hover, a:focus, a:active{ color: #000;}
+
+
+
+.clearfix::after {
+  content: '';
+  display: none;
+  clear: both;
+}
+
+.wrapper {
+  width: 800px;
+  margin: 0 auto;
+}
+
+
+/* header footer */
+.header, .footer {
+  width: 100%;
+  height: 60px;
+  color: #fff;
+}
+.header .logo, .footer .logo {
+  float: left;
+  line-height: 60px;
+}
+.header { 
+  position: fixed;
+  top: 0;
+  background-color: #dc1930;
+}
+.header .right { 
+  float: right; 
+}
+.header .right a {
+  display: inline-block;
+  width: 66px;
+  height: 60px;
+  padding-left: 26px;
+  line-height: 60px;
+  color: #fff;
+  text-align: right;
+}
+.header .right .login {
+  background-image: url(/static/icon_lock.svg);
+  background-repeat: no-repeat;
+  background-position-y: 19px;
+}
+.header .right .user {
+  background-image: url(/static/icon_user.svg);
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  background-position: 6px 19px
+}
+.footer { 
+  position: absolute;
+  bottom: 0;
+  background-color: #160608;
+}
+.footer .left { 
+  float: left; 
+  line-height: 60px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* section */
+.board {
+  position: relative;
+  top: 60px;
+  margin-top: 75px;
+  margin-bottom: 85px;
+}
+
+
+
+
