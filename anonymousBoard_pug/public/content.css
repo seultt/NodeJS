@@ -13,17 +13,23 @@
 
 .top-left {
   float: left;
+  height: 40px;
   font-size: 24px;
 }
 .top-right {
   float: right;
+  height: 40px;
+  font-size: 14px;
+  line-height: 40px;
 }
-.top-right span {
+.top-right strong {
   margin-left: 10px;
 }
 
 .board-content {
   min-height: 220px;
+  line-height: 25px;
+  padding: 40px 0;
   line-height: 25px;
 }
 
@@ -32,4 +38,44 @@
   height: 63px;
   border: none;
   border-radius: none;
+}
+
+.board-comment .comment-text {
+  background-color: #f6f6f6;
+  width: 727px;
+  padding-left: 27px;
+} 
+.board-comment .comment-btn {
+  width: 72px;
+  margin-top: 1px;
+  margin-left: -4px;
+  background-color: #dc1930;
+  color: #fff;
+} 
+.comment-list .row {
+  border-bottom: 1px solid #e8e8e8;
+}
+.comment-list .row span[class^="list-"]{
+  height: 90px;
+  line-height: 90px;
+  display: inline-block;
+}
+.comment-list .row .list-user {
+  width: 110px;
+  padding-left: 45px;
+  background-image: url(/static/icon_user_red.svg);
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 10px;
+
+}
+.comment-list .row .list-comment {
+  width: 540px;
+  padding-left: 27px;
+}
+.comment-list .row .list-date {
+  width: 150px;
+  text-align: right;
+  padding-right: 17px;
 }
