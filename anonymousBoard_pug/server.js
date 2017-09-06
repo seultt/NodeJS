@@ -40,6 +40,17 @@ app.post('/addPost', (req, res) => {
   res.redirect('/')
 })
 
+app.get('/content/:num', (req, res) => {
+  const num = parseInt(req.params.num)
+  const matched = data.find(item => item.num === num)
+  if(matched) {
+    res.render('content', {matched})
+  } else{
+    res.status(404)
+    res.send('Not defined 404 Error')
+  }
+})
+
 app.listen(3000, () => {
   console.log('listening...')
 })

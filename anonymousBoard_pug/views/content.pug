@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title 익명게시판
+    link(type='text/css' rel='stylesheet' href='/static/layout.css')
+    link(type='text/css' rel='stylesheet' href='/static/content.css')
+  body
+    .box
+      header.header.clearfix
+        .wrapper
+          h1.logo 
+            a(href="/") Node.js
+          .right
+            a.login(href="#") Login
+            a.user(href="#") User
+      section.wrapper.board 
+        .board-top.clearfix
+          - if(matched.num<10)
+            h3.top-left= '0' + matched.num + ' ' + matched.title
+          - else
+            h3.top-left= matched.num + ' ' + matched.title
+          .top-right
+            span= matched.date
+            span= matched.user
+        .board-content
+          p= matched.content
+        form.board-comment(method="post" action="/content/"+matched.num)
+          input.comment-text(name="comment")
+          button.comment-btn(type="submit") 입력  
+      footer.footer
+        .wrapper
+          h2.logo Node.js
+          p.left IE9 이상에 최적화된 사이트 입니다.        

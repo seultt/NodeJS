@@ -21,11 +21,13 @@
       </thead>
       <tbody>
         <% data.forEach(item => { %>
-          <tr>
-            <td><%= item.num %></td>
-            <td><a href="/content/<%= item.num%>"><%= item.header %></a></td>
-            <td><button>삭제</button></td>
-          </tr>
+          <form action="/admin/<%= item.num %>/del" method="post">
+            <tr>
+              <td><%= item.num %></td>
+              <td><a href="/content/<%= item.num%>"><%= item.header %></a></td>
+              <td><button>삭제</button></td>
+            </tr>
+          </form>
         <% }) %>
       </tbody>
     </table>

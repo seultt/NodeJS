@@ -20,7 +20,7 @@ html
           a.board-add(href="/addPost") +ADD POST
         .board-list.clearfix
           each item in data
-            a.list(href="/post")
+            a.list(href="/content/"+item.num)
               - if(item.num<10)
                   .list-num= '0' + item.num
               - else
