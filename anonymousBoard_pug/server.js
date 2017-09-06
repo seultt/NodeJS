@@ -1,9 +1,8 @@
 const express = require('express')
+const morgan = require('morgan')
 var bodyParser = require('body-parser')
 
 const app = express()
-
-app.use(bodyParser.urlencoded({ extended: false }))
 
 // 날짜 함수
 const d = new Date()
@@ -20,13 +19,16 @@ const data = [
 ]
 // comentData
 const commentData = [
-  {num: 1, user: '헤헷', comment:'Lorem Ipsum is simply dummy text of the printing and', date: 'SEP 05'},
-  {num: 2, user: '헤헷', comment:'Lorem Ipsum is simply dummy text of the printing and', date: 'SEP 05'}
+  {matchedNum: 1, user: '헤헷', comment:'Lorem Ipsum is simply dummy text of the printing and', date: 'SEP 05'},
+  {matchedNum: 2, user: '헤헷', comment:'Lorem Ipsum is simply dummy text of the printing and', date: 'SEP 05'}
 ]
 
 app.locals.pretty = true; //pug : jade express code pretty
 app.set('view engine', 'pug') 
 app.use('/static', express.static('public'))
+app.use(morgan('tiny'))
+app.use(bodyParser.urlencoded({ extended: false }))
+
 
 app.get('/', (req, res) => {
   res.render('index', {data})
@@ -55,7 +57,8 @@ app.post('/addPost', (req, res) => {
 app.get('/content/:num', (req, res) => {
   const num = parseInt(req.params.num)
   const matched = data.find(item => item.num === num)
-  const commentMatched = commentData.filter(item => item.num === num)
+  const commentMatched = commentData.filter(item => item.matchedNum === num)
+  console.log(commentMatched)
   if(matched && commentMatched) {
     res.render('content', {matched, commentMatched})
   } else{
@@ -63,6 +66,17 @@ app.get('/content/:num', (req, res) => {
     res.send('Not defined 404 Error')
   }
 })
+
+app.post('/content/:num', (req, res) => {
+  const matchedNum = parseInt(req.params.num)
+  const user = req.body.user
+  const comment = req.body.comment
+  const date = gotdate(d)
+  commentData.push({matchedNum, user, comment, date})
+  console.log(commentData)
+  res.redirect('/content/'+ matchedNum)
+})
+
 
 app.listen(3000, () => {
   console.log('listening...')

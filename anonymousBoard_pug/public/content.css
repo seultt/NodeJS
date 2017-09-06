@@ -33,6 +33,7 @@
   line-height: 25px;
 }
 
+.board-comment .comment-user,  
 .board-comment .comment-text,  
 .board-comment .comment-btn {
   height: 63px;
@@ -40,28 +41,38 @@
   border-radius: none;
 }
 
+.board-comment .comment-user {
+  background-color: #f6f6f6;
+  width: 150px;
+  padding-left: 27px;
+} 
 .board-comment .comment-text {
   background-color: #f6f6f6;
-  width: 727px;
+  width: 555px;
   padding-left: 27px;
 } 
 .board-comment .comment-btn {
   width: 72px;
   margin-top: 1px;
-  margin-left: -4px;
   background-color: #dc1930;
   color: #fff;
 } 
 .comment-list .row {
+  position: relative;
+  min-height: 90px;
   border-bottom: 1px solid #e8e8e8;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .comment-list .row span[class^="list-"]{
-  height: 90px;
-  line-height: 90px;
   display: inline-block;
+  white-space:normal;
+  vertical-align: text-top;
 }
 .comment-list .row .list-user {
-  width: 110px;
+  /*position: relative;
+  top: 5px;*/
+  width: 150px;
   padding-left: 45px;
   background-image: url(/static/icon_user_red.svg);
   background-size: 22px 22px;
@@ -71,11 +82,11 @@
 
 }
 .comment-list .row .list-comment {
-  width: 540px;
+  width: 500px;
   padding-left: 27px;
 }
 .comment-list .row .list-date {
   width: 150px;
   text-align: right;
-  padding-right: 17px;
+  padding-right: 30px;
 }

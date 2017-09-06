@@ -26,8 +26,10 @@ html
         .board-content
           p= matched.content
         form.board-comment(method="post" action="/content/"+matched.num)
+          input.comment-user(name="user")
           input.comment-text(name="comment")
           button.comment-btn(type="submit") 입력
+          
         .comment-list
           each item in commentMatched
             .row
