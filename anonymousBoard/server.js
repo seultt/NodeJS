@@ -42,18 +42,31 @@ app.get('/admin', authMiddleware, (req, res) => {
 // admin 계정 삭제
 
 app.post('/admin/:num/del',authMiddleware, (req, res) => {
-  let num = parseInt(req.params.num)
-  data.splice(num-1, 1)
+  const num = parseInt(req.params.num)
+  const matched = data.findIndex(item => item.num === num)
+  if(matched === -1) {
+    return res.status(404)
+  }
+  data.splice(matched, 1)
+  // data.splice(num-1, 1) // 요소가 삭제 되어 인덱스 값이 변경되기 때문에 라우트 핸들러의 num값으로 splice 하면 오류가 생긴다.
   console.log('data')
   res.redirect('/admin')
 })
 
-// addPost 내용 전송
+// addPost 데이터에 추가
 app.post('/addPost', (req, res) => {
+  let num
+  if(!data.length){num=1} else {
+    num = Math.max(...data.map(item => item.num)) // Math.max가 배열을 받는게 아니라 인자 전체 중에 최대값을 찾는거라 spread 연산자를 써야한다.
+    console.log(data)
+    console.log(typeof num) 
+    num++
+  }
   const header = req.body.header
   const content = req.body.content
-  const num = data.length +1
-  data.push({header, num, content })
+  data.push({num, header, content })
+  console.log(num)
+ 
   res.redirect('/')
 })
 
