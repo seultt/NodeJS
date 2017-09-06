@@ -39,6 +39,15 @@ app.get('/admin', authMiddleware, (req, res) => {
   res.render('admin.ejs',{data})
 })
 
+// admin 계정 삭제
+
+app.post('/admin/:num/del',authMiddleware, (req, res) => {
+  let num = parseInt(req.params.num)
+  data.splice(num-1, 1)
+  console.log('data')
+  res.redirect('/admin')
+})
+
 // addPost 내용 전송
 app.post('/addPost', (req, res) => {
   const header = req.body.header
